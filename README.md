@@ -26,9 +26,11 @@ attach:
 
 ## Configuration
 
-This container requires the following variables:
+This container requires the following environment variables:
 
 |Name|Description|Example|
 |----|-----------|-------|
 |`TARGET_UUID`|This is the UUID of the service that you want to add the link to. Normally this would be the UUID of the [tutum/haproxy](https://github.com/tutumcloud/haproxy) service.|`667e2342-e44b-43ab-99f6-369b335d8aad`|
 |`TUTUM_AUTH`|This is required to get authentication information from the Tutum API. Normally this will be automatically set by Tutum when you give the service running this app the `global` role.|`ApiKey username:laisugdfilasueytroawe7taooai7t3oaiwuy3o1`|
+
+This container needs to be linked to the service(s) that you want the router to route to.
