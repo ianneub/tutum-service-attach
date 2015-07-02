@@ -38,7 +38,7 @@ attach:
     - global
 ```
 
-More configuration options for the `web` container can be [found here](https://github.com/tutumcloud/haproxy/tree/staging).
+More configuration options for the `web` container can be [found here](https://github.com/tutumcloud/haproxy/tree/staging#settings-in-linked-application-services).
 
 ## Configuration
 
