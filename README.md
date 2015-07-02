@@ -18,7 +18,7 @@ lb:
   image: tutum/haproxy:staging
 ```
 
-Now get the UUID of the `lb` service from the router stack. Assuming it is `fbcb2846-a0fb-48bf-89b7-212e601dfdf1`, create the web stack as follows.
+Now get the UUID of the `lb` service from the router stack. Assuming it is `fbcb2846-a0fb-48bf-89b7-212e601dfdf1`, create the web stack as follows:
 
 ### Web service stack
 
@@ -26,7 +26,7 @@ Now get the UUID of the `lb` service from the router stack. Assuming it is `fbcb
 web:
   image: tutum/hello-world
   environment:
-    - 'VIRTUAL_HOST=http://asdf.yourdoman.com,https://asdf.yourdoman.com'
+    - 'VIRTUAL_HOST=http://asdf.yourdoman.com'
 attach:
   image: ianneub/tutum-service-attach
   links:
@@ -37,6 +37,8 @@ attach:
   roles:
     - global
 ```
+
+More configuration options for the `web` container can be [found here](https://github.com/tutumcloud/haproxy/tree/staging).
 
 ## Configuration
 
