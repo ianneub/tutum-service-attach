@@ -1,12 +1,26 @@
-# Tutum Service Link Push
+# Tutum Service Attach
 
-This containerized docker app works with services running in the [Tutum cloud](https://www.tutum.co/). It is designed to be used with a stack to allow a stack to link itself into a centralized router.
+This containerized docker app works with services running in the [Tutum cloud](https://www.tutum.co/). It is designed to be used with a stack to allow a stack to link itself to a centralized router.
 
-## Usage
+We use this to automatically link newly created staging stacks to our central router.
 
-This container assumes that you already have a `tutum/haproxy` service running in another stack or as a stand along service in Tutum.
+## Example Usage
+
+This container assumes that you already have a `tutum/haproxy` service running in another stack or as a stand alone service in Tutum.
 
 Given that you have an existing `tutum/haproxy` service running, you will need to get the UUID for that service. Let's assume it is `fbcb2846-a0fb-48bf-89b7-212e601dfdf1`. You could launch a new stack and target the web application to the haproxy router so that it starts routing traffic to this app automatically.
+
+First launch the router stack.
+
+### Router stack
+```yaml
+lb:
+  image: tutum/haproxy:staging
+```
+
+Now get the UUID of the `lb` service from the router stack. Assuming it is `fbcb2846-a0fb-48bf-89b7-212e601dfdf1`, create the web stack as follows.
+
+### Web service stack
 
 ```yaml
 web:
