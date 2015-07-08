@@ -1,5 +1,7 @@
 # Tutum Service Attach
 
+[![](https://badge.imagelayers.io/ianneub/tutum-service-attach:latest.svg)](https://imagelayers.io/?images=ianneub/tutum-service-attach:latest 'Get your own badge on imagelayers.io')
+
 This containerized docker app works with services running in the [Tutum cloud](https://www.tutum.co/). It is designed to be used with a stack to allow a stack to link itself to a centralized router.
 
 We use this to automatically link newly created staging stacks to our central router.
